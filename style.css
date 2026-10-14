@@ -1,0 +1,732 @@
+/* ===== RESET & BIẾN MÀU SẮC ===== */
+:root {
+    --wood-light: #f6dcb3;
+    --wood-mid: #e6be84;
+    --wood-dark: #9c5a25;
+    --wood-border: #6b3710;
+    --roof-green: #2c583c;
+    --roof-green-light: #417754;
+    --red-phuloi: #ee2b2b;
+    --vcb-green: #0a4f2c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Baloo 2', sans-serif;
+    min-height: 100vh;
+    background-color: #ecd3a8;
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(114, 165, 85, 0.25) 0%, transparent 35%),
+        radial-gradient(circle at 85% 20%, rgba(114, 165, 85, 0.2) 0%, transparent 30%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.18) 0px, rgba(255,255,255,0.18) 40px, transparent 40px, transparent 80px),
+        linear-gradient(180deg, #e7c896 0%, #f3dfc1 50%, #d4ab72 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px;
+    overflow-x: hidden;
+}
+
+.scene-wrapper {
+    width: 100%;
+    max-width: 1420px;
+    position: relative;
+    padding-top: 35px;
+}
+
+/* ===== DÂY THỪNG TREO BẢNG ===== */
+.hanging-rope {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-bottom: -35px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.knot {
+    width: 34px;
+    height: 34px;
+    background: radial-gradient(circle, #d48c3b 20%, #7c420c 90%);
+    border: 3px solid #4e2704;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    transform: translateX(-50%);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+    z-index: 4;
+}
+
+.rope {
+    position: absolute;
+    top: 0;
+    width: 38%;
+    height: 8px;
+    background: repeating-linear-gradient(45deg, #c8873c, #c8873c 6px, #854d14 6px, #854d14 12px);
+    border-top: 1px solid #4e2704;
+    border-bottom: 1px solid #4e2704;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.25);
+}
+
+.rope-left {
+    left: 13%;
+    transform: rotate(-11deg);
+    transform-origin: right center;
+}
+
+.rope-right {
+    right: 13%;
+    transform: rotate(11deg);
+    transform-origin: left center;
+}
+
+/* ===== KHUNG BẢNG GỖ CHÍNH ===== */
+.wooden-house {
+    background: 
+        repeating-linear-gradient(0deg, rgba(160, 95, 35, 0.06) 0px, rgba(160, 95, 35, 0.06) 3px, transparent 3px, transparent 14px),
+        linear-gradient(180deg, #f7dfba 0%, #e8c288 55%, #d6a764 100%);
+    border: 8px solid var(--wood-dark);
+    outline: 3px solid var(--wood-border);
+    border-radius: 45px 45px 22px 22px;
+    box-shadow: 
+        0 20px 45px rgba(58, 28, 5, 0.45),
+        inset 0 0 30px rgba(139, 69, 19, 0.35);
+    padding: 25px 18px 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== HEADER & MÁI NHÀ ===== */
+.house-roof-section {
+    position: relative;
+    min-height: 245px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px 45px;
+}
+
+/* Thanh mái xanh lá 2 bên */
+.roof-trim {
+    position: absolute;
+    top: 10px;
+    width: 40%;
+    height: 22px;
+    background: linear-gradient(180deg, var(--roof-green-light), var(--roof-green));
+    border: 3px solid #1b3825;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+    z-index: 3;
+}
+
+.roof-trim-left {
+    left: 8%;
+    transform: rotate(-11deg);
+    transform-origin: right top;
+}
+
+.roof-trim-right {
+    right: 8%;
+    transform: rotate(11deg);
+    transform-origin: left top;
+}
+
+.Suspend-hole {
+    position: absolute;
+    top: 52px;
+    width: 24px;
+    height: 24px;
+    background: #4e2704;
+    border: 5px solid #c6843c;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.hole-left { left: 8%; }
+.hole-right { right: 8%; }
+
+/* Trang trí bên trái (Chuồng chim & Hàng rào) */
+.decor-left {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    position: relative;
+    z-index: 4;
+    margin-top: 35px;
+}
+
+.hanging-heart-left {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 26px;
+    filter: drop-shadow(0 3px 3px rgba(0,0,0,0.3));
+    animation: swing 3s infinite ease-in-out;
+}
+
+.birdhouse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.birdhouse-roof {
+    width: 0;
+    height: 0;
+    border-left: 48px solid transparent;
+    border-right: 48px solid transparent;
+    border-bottom: 38px solid #8c4a19;
+    filter: drop-shadow(0 3px 2px rgba(0,0,0,0.3));
+}
+
+.birdhouse-body {
+    width: 68px;
+    height: 62px;
+    background: linear-gradient(180deg, #d18d47, #a66324);
+    border: 3px solid #5c3009;
+    border-radius: 0 0 6px 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.birdhouse-hole {
+    font-size: 26px;
+    color: #311703;
+}
+
+.wooden-fence {
+    display: flex;
+    gap: 5px;
+    padding-bottom: 2px;
+}
+
+.wooden-fence span {
+    width: 16px;
+    height: 50px;
+    background: linear-gradient(180deg, #e7ad66, #bd7b33);
+    border: 2px solid #6b3710;
+    border-radius: 10px 10px 2px 2px;
+}
+
+/* Cụm Logo Trung tâm */
+.center-branding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    z-index: 4;
+    margin-top: 10px;
+}
+
+.brand-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-box {
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+    filter: drop-shadow(0 5px 8px rgba(0,0,0,0.2));
+    transition: transform 0.3s ease;
+}
+
+.logo-box:hover {
+    transform: scale(1.06);
+}
+
+.lhpn-logo img {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+}
+
+.lhpn-fallback {
+    width: 115px;
+    height: 115px;
+    background: radial-gradient(circle, #4bb8f5, #0277bd);
+    border: 4px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 13px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.lhpn-fallback i {
+    font-size: 36px;
+    margin-bottom: 4px;
+}
+
+.vcb-svg {
+    width: 125px;
+    height: 115px;
+}
+
+.phu-loi-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 34px;
+    color: var(--red-phuloi);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 
+        -2px -2px 0 #fff,  
+         2px -2px 0 #fff,
+        -2px  2px 0 #fff,
+         2px  2px 0 #fff,
+         0px  4px 8px rgba(0,0,0,0.35);
+}
+
+.vcb-title {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--vcb-green);
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(255,255,255,0.8);
+}
+
+/* Trang trí bên phải (Chậu hoa & Biển Ngôi nhà số) */
+.decor-right {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    position: relative;
+    z-index: 4;
+    margin-top: 30px;
+}
+
+.hanging-heart-right {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    font-size: 26px;
+    filter: drop-shadow(0 3px 3px rgba(0,0,0,0.3));
+    animation: swing 3.2s infinite ease-in-out;
+}
+
+.flower-pot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plant-leaves {
+    font-size: 28px;
+    margin-bottom: -8px;
+    z-index: 2;
+}
+
+.pot-body {
+    width: 68px;
+    height: 48px;
+    background: linear-gradient(180deg, #f3e5cf, #cfb591);
+    border: 3px solid #6b4c35;
+    border-radius: 6px 6px 24px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    box-shadow: inset 0 -4px 8px rgba(0,0,0,0.15);
+}
+
+.signboard-ngoinhaso {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.signboard-ngoinhaso:hover {
+    transform: scale(1.06) rotate(-2deg);
+}
+
+.mini-pink-house {
+    position: absolute;
+    top: -32px;
+    right: -10px;
+    font-size: 32px;
+    transform: rotate(12deg);
+    filter: drop-shadow(0 3px 4px rgba(0,0,0,0.3));
+}
+
+.sign-plank {
+    width: 105px;
+    padding: 2px 10px;
+    background: linear-gradient(180deg, #fae2b8, #dfb16b);
+    border: 2.5px solid #6b3710;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    font-weight: 700;
+    color: #2b1403;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.25);
+}
+
+/* Dải hoa lá ngăn cách */
+.foliage-divider {
+    position: absolute;
+    bottom: -8px;
+    left: 15px;
+    right: 15px;
+    height: 36px;
+    background: linear-gradient(90deg, #2d5a27, #4a853b, #2d5a27);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    border: 2px solid #1e3f19;
+    z-index: 5;
+    overflow: hidden;
+}
+
+/* ===== DANH SÁCH 9 THẺ CHUYÊN MỤC ===== */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+    position: relative;
+    z-index: 6;
+}
+
+.wood-card {
+    background: linear-gradient(180deg, #faebd0 0%, #f1d39d 65%, #e5be7d 100%);
+    border: 3.5px solid #753d12;
+    border-radius: 36px 36px 18px 18px;
+    padding: 12px 6px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 
+        0 8px 14px rgba(60, 28, 4, 0.35),
+        inset 0 2px 5px rgba(255, 255, 255, 0.7),
+        inset 0 -4px 8px rgba(139, 69, 19, 0.25);
+    transition: all 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+    min-height: 300px;
+}
+
+.wood-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: linear-gradient(180deg, #fff6e5 0%, #f7deaf 65%, #ecc98c 100%);
+    border-color: #b52b2b;
+    box-shadow: 
+        0 16px 26px rgba(60, 28, 4, 0.45),
+        inset 0 2px 8px rgba(255, 255, 255, 0.9);
+}
+
+/* Đầu thẻ hình vòm & Trái tim */
+.card-top-arch {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6px;
+    position: relative;
+}
+
+.card-top-arch::before,
+.card-top-arch::after {
+    content: "🌿";
+    font-size: 13px;
+    margin: 0 2px;
+}
+
+.card-top-arch::before {
+    transform: scaleX(-1);
+}
+
+.heart-icon {
+    font-size: 22px;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+    transition: transform 0.25s ease;
+}
+
+.wood-card:hover .heart-icon {
+    transform: scale(1.25);
+}
+
+/* Nội dung tiêu đề thẻ */
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 4px 2px;
+}
+
+.card-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    color: #161616;
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+}
+
+/* Cụm icon mạng xã hội ở thẻ 1 */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.s-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+}
+
+.s-btn:hover {
+    transform: scale(1.2);
+}
+
+.s-btn.tiktok { background: #000000; }
+.s-btn.facebook { background: #1877f2; }
+.s-btn.zalo { 
+    background: #0068ff; 
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: 10px;
+}
+.s-btn.youtube { 
+    background: #ff0000; 
+    border-radius: 7px;
+    width: 32px;
+}
+
+/* Khung Mã QR */
+.qr-wrapper {
+    width: 100%;
+    max-width: 112px;
+    aspect-ratio: 1 / 1;
+    background: #ffffff;
+    padding: 6px;
+    border-radius: 8px;
+    border: 2px solid #d3b280;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.18);
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Thanh gỗ đỡ chân bảng */
+.wooden-base-ledge {
+    height: 20px;
+    background: linear-gradient(180deg, #b87333, #7a4212);
+    border: 3px solid #4e2704;
+    border-radius: 10px;
+    margin-top: 16px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+/* ===== MODAL TƯƠNG TÁC ===== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 15, 5, 0.72);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box {
+    background: linear-gradient(180deg, #fff5e4 0%, #f3d6a4 100%);
+    border: 6px solid var(--wood-dark);
+    outline: 3px solid var(--wood-border);
+    border-radius: 28px;
+    width: 100%;
+    max-width: 440px;
+    padding: 28px 25px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transform: scale(0.85);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.modal-overlay.active .modal-box {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #753d12;
+    background: #ee2b2b;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.modal-close:hover {
+    transform: scale(1.12);
+    background: #c81e1e;
+}
+
+.modal-header-heart {
+    font-size: 34px;
+    margin-bottom: 6px;
+}
+
+#modalTitle {
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    color: #5c2c06;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+#modalDesc {
+    font-size: 16px;
+    color: #3d220a;
+    line-height: 1.45;
+    margin-bottom: 18px;
+}
+
+.modal-qr-frame {
+    width: 210px;
+    height: 210px;
+    margin: 0 auto 14px;
+    background: #fff;
+    padding: 12px;
+    border-radius: 16px;
+    border: 4px solid #9c5a25;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.modal-qr-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.scan-hint {
+    font-size: 14px;
+    color: #6b3710;
+    margin-bottom: 16px;
+}
+
+.btn-visit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(180deg, #2e8b57, #195935);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 10px 24px;
+    border-radius: 30px;
+    border: 2px solid #0f3821;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+    transition: all 0.2s ease;
+}
+
+.btn-visit:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(180deg, #3aa86b, #206b41);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.35);
+}
+
+@keyframes swing {
+    0%, 100% { transform: rotate(-6deg); }
+    50% { transform: rotate(6deg); }
+}
+
+/* ===== ĐÁP ỨNG MÀN HÌNH (RESPONSIVE) ===== */
+@media (max-width: 1280px) {
+    .cards-container {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    .house-roof-section {
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 40px;
+    }
+    .roof-trim, .hanging-rope {
+        display: none;
+    }
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .center-branding {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

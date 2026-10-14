@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngôi Nhà Số - Hội LHPN Phường Phú Lợi & Vietcombank</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- File CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="scene-wrapper">
+        <!-- Dây treo bảng gỗ -->
+        <div class="hanging-rope">
+            <div class="knot"></div>
+            <div class="rope rope-left"></div>
+            <div class="rope rope-right"></div>
+        </div>
+
+        <!-- Khung bảng chính (Ngôi nhà gỗ) -->
+        <main class="wooden-house">
+            
+            <!-- Phần mái và Header -->
+            <header class="house-roof-section">
+                <div class="roof-trim roof-trim-left"></div>
+                <div class="roof-trim roof-trim-right"></div>
+                <div class="Suspend-hole hole-left"></div>
+                <div class="Suspend-hole hole-right"></div>
+
+                <!-- Trang trí bên trái (Chuồng chim & Hàng rào) -->
+                <div class="decor-left">
+                    <div class="hanging-heart-left">❤️</div>
+                    <div class="birdhouse">
+                        <div class="birdhouse-roof"></div>
+                        <div class="birdhouse-body">
+                            <div class="birdhouse-hole">♥</div>
+                        </div>
+                    </div>
+                    <div class="wooden-fence">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+
+                <!-- Cụm Logo Trung tâm -->
+                <div class="center-branding">
+                    <div class="brand-item">
+                        <!-- Bạn có thể thay src bằng ảnh logo thật của Hội LHPN ở máy -->
+                        <div class="logo-box lhpn-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/vi/2/29/Logo_H%E1%BB%99i_Li%C3%AAn_hi%E1%BB%87p_Ph%E1%BB%A5_n%E1%BB%AF_Vi%E1%BB%87t_Nam.png" 
+                                 alt="Logo Hội LHPN Việt Nam" 
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="logo-fallback lhpn-fallback" style="display:none;">
+                                <i class="fa-solid fa-dove"></i>
+                                <span>LHPN VIỆT NAM</span>
+                            </div>
+                        </div>
+                        <h1 class="phu-loi-title">PHƯỜNG PHÚ LỢI</h1>
+                    </div>
+
+                    <div class="brand-item">
+                        <!-- Bạn có thể thay src bằng ảnh logo Vietcombank thật ở máy -->
+                        <div class="logo-box vcb-logo">
+                            <svg viewBox="0 0 120 110" class="vcb-svg">
+                                <defs>
+                                    <linearGradient id="vcbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#8cc63f;stop-opacity:1" />
+                                        <stop offset="50%" style="stop-color:#008142;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#004b28;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M25,20 C45,10 75,10 95,20 C110,28 105,50 90,75 C78,95 68,102 60,102 C52,102 42,95 30,75 C15,50 10,28 25,20 Z" fill="url(#vcbGrad)"/>
+                                <path d="M40,36 C52,32 68,32 80,36 C85,42 75,62 64,76 C61,80 59,80 56,76 C45,62 35,42 40,36 Z" fill="#f3d299"/>
+                            </svg>
+                        </div>
+                        <h2 class="vcb-title">Vietcombank</h2>
+                    </div>
+                </div>
+
+                <!-- Trang trí bên phải (Chậu hoa & Biển Ngôi nhà số) -->
+                <div class="decor-right">
+                    <div class="hanging-heart-right">❤️</div>
+                    <div class="flower-pot">
+                        <div class="plant-leaves">🌿🌼🌿</div>
+                        <div class="pot-body">❤️</div>
+                    </div>
+                    <div class="signboard-ngoinhaso" id="btnIntro" title="Nhấn để xem giới thiệu Ngôi nhà số">
+                        <div class="mini-pink-house">🏠</div>
+                        <div class="sign-plank">Ngôi</div>
+                        <div class="sign-plank">nhà</div>
+                        <div class="sign-plank">số</div>
+                    </div>
+                </div>
+
+                <!-- Dải cây xanh và hoa trang trí ngang -->
+                <div class="foliage-divider">
+                    <span>🌿</span><span>🌸</span><span>🍃</span><span>🌼</span><span>🌿</span>
+                    <span>🌺</span><span>🍃</span><span>🌼</span><span>🌿</span><span>🌸</span>
+                    <span>🍃</span><span>🌼</span><span>🌿</span><span>🌸</span><span>🍃</span>
+                    <span>🌼</span><span>🌿</span><span>🌺</span><span>🍃</span><span>🌼</span>
+                </div>
+            </header>
+
+            <!-- Phần thân: 9 Thẻ chuyên mục tương tác -->
+            <section class="cards-container">
+                
+                <!-- 1. Thông tin Hội -->
+                <article class="wood-card" 
+                         data-title="Thông tin Hội" 
+                         data-desc="Kênh thông tin chính thức của Hội Liên hiệp Phụ nữ Phường Phú Lợi trên các nền tảng mạng xã hội (TikTok, Facebook, Zalo, YouTube)."
+                         data-url="https://phunuvietnam.vn">
+                    <div class="card-top-arch">
+                        <span class="heart-icon">❤️</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Thông tin Hội</h3>
+                        <div class="social-links" onclick="event.stopPropagation();">
+                            <a href="https://tiktok.com" target="_blank" class="s-btn tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="https://facebook.com" target="_blank" class="s-btn facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://zalo.me" target="_blank" class="s-btn zalo" title="Zalo">Zalo</a>
+                            <a href="https://youtube.com" target="_blank" class="s-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="qr-wrapper">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://phunuvietnam.vn" alt="QR Thông tin Hội">
+                    </div>
+                </article>
+
+                <!-- 2. Sổ tay PN Pháp luật -->
+                <article class="wood-card" 
+                         data-title="Sổ tay PN Pháp luật" 
+                         data-desc="Cẩm nang phổ biến, giáo dục pháp luật, bảo vệ quyền và lợi ích hợp pháp, chính đáng của phụ nữ và trẻ em."
+                         data-url="https://vwu.vn/so-tay-phap-luat">
+                    <div class="card-top-arch">
+                        <span class="heart-icon">❤️</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sổ tay PN<br>Pháp luật</h3>
+                    </div>
+                    <div class="qr-wrapper">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://vwu.vn/so-tay-phap-luat" alt="QR Sổ tay PN Pháp luật">
+                    </div>
+                </article>
+
+                <!-- 3. Hồ sơ ANXH số -->
+                <article class="wood-card" 
+                         data-title="Hồ sơ ANXH số" 
+                         data-desc="Hệ thống cơ sở dữ liệu và hồ sơ công tác An sinh xã hội số, hỗ trợ phụ nữ và trẻ em có hoàn cảnh khó khăn trên địa bàn."
+                         data-url="https://vwu.vn/ho-so-anxh-so">
+                    <div class="card-top-arch">
+                        <span class="heart-icon">❤️</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Hồ sơ<br>ANXH số</h3>
+                    </div>
+                    <div class="qr-wrapper">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://vwu.vn/ho-so-anxh-so" alt="QR Hồ sơ ANXH số">
+                    </div>
+                </article>
+
+                <!-- 4. Hòm thư -->
+                <article class="wood-card" 
+                         data-title="Hòm thư góp ý" 
+                         data-desc="Tiếp nhận ý kiến đóng góp, tâm tư, nguyện vọng và phản ánh của hội viên, phụ nữ Phường Phú Lợi."
+                         data-url="https://vwu.vn/hom-thu-gop-y">
+                    <div class="card-top-arch">
+                        <span class="heart-icon">❤️</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Hòm thư</h3>
+                    </div>
+                    <div class="qr-wrapper">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://vwu.vn/hom-thu-gop-y" alt="QR Hòm thư">
+                    </div>
+                </article>
+
+                <!-- 5. Chuyên mục học tập làm theo lời Bác -->
+                <article class="wood-card" 
+                         data-title="Chuyên mục học tập làm theo lời Bác" 
+                         data-desc="Tư liệu, gương điển hình tiên tiến và các mô hình học tập, làm theo tư tưởng, đạo đức, phong cách Hồ Chí Minh."
+                         data-url="https://vwu.vn/hoc-tap-theo-loi-bac">
+                    <div class="card-top-arch">
+                        <span class="heart-icon">❤️</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Chuyên mục<br>học tập làm<br>theo lời Bác</h3>
+                    </div>
+                    <div class="qr-wrapper">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://vwu.vn/hoc-tap-theo-loi-bac" alt="QR Học tập theo lời Bác">
+                    </div>
+                </article>
+
+                <!-- 6. Chi hội số, Gia đình số -->
+                <article class="wood-card" 
+                         data-title="Chi hội số, Gia đình số" 
+                         data-desc="Triển khai mô hình Chi hội phụ nữ số và xây dựng Gia đình số văn minh, hiện đại trong kỷ nguyên chuyển đổi số."
+                         data-url="https://vwu.vn/chi-hoi-so-gia-dinh-so">
+                    <div class="card-top-arch">
+                        <span class="heart-icon">❤️</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Chi hội số,<br>Gia đình số</h3>
+                    </div>
+                    <div class="qr-wrapper">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://vwu.vn/chi-hoi-so-gia-dinh-so" alt="QR Chi hội số">
+                    </div>
+                </article>
+
+                <!-- 7. Các mô hình hoạt động Hội -->
+                <article class="wood-card" 
+                         data-title="Các mô hình hoạt động Hội" 
+                         data-desc="Tổng hợp các mô hình, câu lạc bộ, phong trào thi đua thiết thực, hiệu quả của Hội LHPN Phường Phú Lợi."
+                         data-url="https://vwu.vn/mo-hinh-hoat-dong">
+                    <div class="card-top-arch">
+                        <span class="heart-icon">❤️</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Các mô hình<br>hoạt động Hội</h3>
+                    </div>
+                    <div class="qr-wrapper">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://vwu.vn/mo-hinh-hoat-dong" alt="QR Mô hình hoạt động">
+                    </div>
+                </article>
+
+                <!-- 8. Nghị quyết Đại hội PN các cấp -->
+                <article class="wood-card" 
+                         data-title="Nghị quyết Đại hội PN các cấp" 
+                         data-desc="Văn kiện, tài liệu tuyên truyền và chương trình hành động thực hiện Nghị quyết Đại hội đại biểu Phụ nữ các cấp."
+                         data-url="https://vwu.vn/nghi-quyet-dai-hoi">
+                    <div class="card-top-arch">
+                        <span class="heart-icon">❤️</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Nghị quyết Đại<br>hội PN các cấp</h3>
+                    </div>
+                    <div class="qr-wrapper">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://vwu.vn/nghi-quyet-dai-hoi" alt="QR Nghị quyết Đại hội">
+                    </div>
+                </article>
+
+                <!-- 9. Hướng dẫn cài đặt ứng dụng Vietcombank -->
+                <article class="wood-card" 
+                         data-title="Hướng dẫn cài đặt ứng dụng Vietcombank" 
+                         data-desc="Hướng dẫn tải, đăng ký và sử dụng ngân hàng số VCB Digibank an toàn, tiện lợi để thanh toán không dùng tiền mặt."
+                         data-url="https://www.vietcombank.com.vn">
+                    <div class="card-top-arch">
+                        <span class="heart-icon">❤️</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Hướng dẫn cài<br>đặt ứng dụng<br>Vietcombank</h3>
+                    </div>
+                    <div class="qr-wrapper">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://www.vietcombank.com.vn" alt="QR Vietcombank">
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- Đế bảng gỗ -->
+            <div class="wooden-base-ledge"></div>
+        </main>
+    </div>
+
+    <!-- Cửa sổ bật lên (Modal) khi click vào thẻ -->
+    <div class="modal-overlay" id="cardModal">
+        <div class="modal-box">
+            <button class="modal-close" id="closeModal" title="Đóng">&times;</button>
+            <div class="modal-header-heart">❤️</div>
+            <h3 id="modalTitle">Tên chuyên mục</h3>
+            <p id="modalDesc">Mô tả chuyên mục...</p>
+            <div class="modal-qr-frame">
+                <img id="modalQrImg" src="" alt="Mã QR phóng to">
+            </div>
+            <p class="scan-hint"><i class="fa-solid fa-camera"></i> Quét mã QR bằng điện thoại hoặc nhấn nút bên dưới</p>
+            <div class="modal-actions">
+                <a href="#" id="modalLinkBtn" target="_blank" class="btn-visit">
+                    <i class="fa-solid fa-up-right-from-square"></i> Truy cập chuyên mục
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script xử lý tương tác -->
+    <script>
+        const cards = document.querySelectorAll('.wood-card');
+        const modal = document.getElementById('cardModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalQrImg = document.getElementById('modalQrImg');
+        const modalLinkBtn = document.getElementById('modalLinkBtn');
+        const btnIntro = document.getElementById('btnIntro');
+
+        // Xử lý click vào từng thẻ chuyên mục
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.getAttribute('data-title');
+                const desc = card.getAttribute('data-desc');
+                const url = card.getAttribute('data-url');
+                const qrSrc = card.querySelector('.qr-wrapper img').src;
+
+                modalTitle.textContent = title;
+                modalDesc.textContent = desc;
+                modalQrImg.src = qrSrc;
+                modalLinkBtn.href = url;
+
+                modal.classList.add('active');
+            });
+        });
+
+        // Xử lý click vào biển "Ngôi nhà số"
+        btnIntro.addEventListener('click', () => {
+            modalTitle.textContent = "Ngôi Nhà Số - Phường Phú Lợi";
+            modalDesc.textContent = "Công trình chuyển đổi số phối hợp giữa Hội Liên hiệp Phụ nữ Phường Phú Lợi và Ngân hàng TMCP Ngoại thương Việt Nam (Vietcombank), giúp hội viên và người dân tra cứu thông tin nhanh chóng qua mã QR.";
+            modalQrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://phunuvietnam.vn";
+            modalLinkBtn.href = "https://phunuvietnam.vn";
+            modal.classList.add('active');
+        });
+
+        // Đóng Modal
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
